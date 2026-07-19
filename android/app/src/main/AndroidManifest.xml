@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.piliplus">
+    
     <uses-sdk tools:overrideLibrary="*" />
 
     <queries>
@@ -36,7 +37,7 @@
         </intent>
     </queries>
 
-    <application xmlns:tools="http://schemas.android.com/tools"
+    <application 
         android:name="${applicationName}"
         android:allowBackup="false"
         android:enableOnBackInvokedCallback="false"
