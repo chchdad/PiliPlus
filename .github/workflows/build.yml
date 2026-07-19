@@ -99,12 +99,8 @@ jobs:
               run: lib/scripts/build.ps1 android
 
             - name: Flutter Build Release Apk
-              if: ${{ github.event_name == 'workflow_dispatch' }}
-              # 直接进到 android 目录调用 gradlew，这能完整接收所有调试参数
-              run: |
-                cd android
-                ./gradlew assembleRelease --info --stacktrace
-                
+              run: flutter build apk --release --split-per-abi --dart-define-from-file=pili_release.json --pub
+              
             - name: Flutter Build Dev Apk
               if: ${{ github.event_name == 'pull_request' }}
               run: |
