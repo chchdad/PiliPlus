@@ -100,7 +100,7 @@ jobs:
 
             - name: Flutter Build Release Apk
               if: ${{ github.event_name == 'workflow_dispatch' }}
-              run: flutter build apk --release --split-per-abi --dart-define-from-file=pili_release.json --pub --stacktrace --info
+              run: flutter build apk --release --split-per-abi --dart-define-from-file=pili_release.json --pub -- --info --stacktrace
 
             - name: Flutter Build Dev Apk
               if: ${{ github.event_name == 'pull_request' }}
